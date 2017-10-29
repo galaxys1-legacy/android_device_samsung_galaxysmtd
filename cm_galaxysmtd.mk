@@ -27,6 +27,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/galaxysmtd/device.mk)
 
+
 # Device identifier
 PRODUCT_RELEASE_NAME := GalaxyS
 PRODUCT_DEVICE := galaxysmtd

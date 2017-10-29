@@ -40,7 +40,8 @@
 DEVICE_PACKAGE_OVERLAYS += \
 	device/samsung/galaxysmtd/overlay
 
-PRODUCT_COPY_FILES := \
+
+PRODUCT_COPY_FILES += \
 	device/samsung/galaxysmtd/asound.conf:system/etc/asound.conf
 
 # Prebuilt kl and kcm keymaps
@@ -51,6 +52,12 @@ PRODUCT_COPY_FILES += \
 # We have FFC
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml
+
+# This device is hdpi
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+# A list of dpis to select prebuilt apk, in precedence order.
+PRODUCT_AAPT_PREBUILT_DPI := hdpi mdpi xhdpi xxhdpi
 
 # Build messaging app
 PRODUCT_PACKAGES += \
