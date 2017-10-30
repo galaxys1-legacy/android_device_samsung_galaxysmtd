@@ -1,4 +1,6 @@
-# Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2013 OmniROM Project
+# Copyright (C) 2013-2016, The CyanogenMod Project
+# Copyright (C) 2017, The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,25 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# This file is the build configuration for a full Android
-# build for crespo hardware. This cleanly combines a set of
-# device-specific aspects (drivers) with a device-agnostic
-# product configuration (apps).
-#
+# low ram device
+TARGET_LOW_RAM_DEVICE := true
 
-# Inherit from those products. Most specific first.
+# Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-# This is where we'd set a backup provider if we had one
-#$(call inherit-product, device/sample/products/backup_overlay.mk)
+
+# Inherit some common CM stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# Inherit device configuration
 $(call inherit-product, device/samsung/galaxysmtd/device.mk)
 
-# Galaxy S uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
-
-# Discard inherited values and use our own instead.
-PRODUCT_NAME := full_galaxysmtd
+# Device identifier
+PRODUCT_RELEASE_NAME := GalaxyS
 PRODUCT_DEVICE := galaxysmtd
+PRODUCT_NAME := lineage_galaxysmtd
 PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := GT-I9000
