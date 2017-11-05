@@ -17,14 +17,10 @@
 # low ram device
 TARGET_LOW_RAM_DEVICE := true
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
 # Inherit device configuration
 $(call inherit-product, device/samsung/galaxysmtd/device.mk)
 
-
-# Device identifier
+## Device identifier. This must come after all inclusions
 PRODUCT_RELEASE_NAME := GalaxyS
 PRODUCT_DEVICE := galaxysmtd
 PRODUCT_NAME := lineage_galaxysmtd
