@@ -36,10 +36,6 @@
 # and is used by people who have access to binary versions of the drivers
 # but not to the original vendor tree. Be sure to update both.
 
-# These are the hardware-specific configuration files
-DEVICE_PACKAGE_OVERLAYS := device/samsung/galaxysmtd/overlay
-
-
 PRODUCT_COPY_FILES += \
 	device/samsung/galaxysmtd/asound.conf:system/etc/asound.conf
 
